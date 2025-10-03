@@ -1,0 +1,161 @@
+/* style.css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-image: 
+        radial-gradient(circle at 25% 25%, #1a1a1a 0%, transparent 50%),
+        radial-gradient(circle at 75% 75%, #2a2a2a 0%, transparent 50%);
+}
+
+.container {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* Анимированный главный заголовок */
+.main-title {
+    font-size: 3rem;
+    text-align: center;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    background: linear-gradient(45deg, #ff0000, #ff6b6b, #ff0000);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: gradientShift 3s ease infinite;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Стиль для подзаголовка */
+.subtitle {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #cccccc;
+    border-bottom: 2px solid #333;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* Стиль для основного текста */
+.content {
+    background: rgba(30, 30, 30, 0.8);
+    padding: 30px;
+    border-radius: 10px;
+    border-left: 4px solid #ff0000;
+    box-shadow: 0 0 20px rgba(255, 0, 0, 0.1);
+    font-size: 1.1rem;
+}
+
+/* Выделение контактов */
+.contact {
+    color: #ff6b6b;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 107, 107, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Анимация появления */
+.fade-in {
+    animation: fadeIn 2s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Пульсирующая анимация для важных элементов */
+.pulse {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* Стиль для скроллбара */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff0000;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #cc0000;
+}
+
+/* Адаптивность для мобильных устройств */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1.4rem;
+    }
+    
+    .content {
+        padding: 20px;
+        font-size: 1rem;
+    }
+    
+    body {
+        padding: 10px;
+    }
+}
+
+/* Эффект печатающегося текста */
+.typing-effect {
+    overflow: hidden;
+    border-right: 2px solid #ff0000;
+    white-space: nowrap;
+    margin: 0 auto;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #ff0000 }
+}
